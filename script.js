@@ -1,10 +1,13 @@
-var mymap = L.map('mapid').setView([38.63775922635261, -90.28368046396037], 12);
+var mymap = L.map('mapid').setView([38.63775922635261, -90.28368046396037], 13);
 //https://a.tile.openstreetmap.org/{z}/{x}/{y}.png
 //'http://a.tile.stamen.com/toner/{z}/{x}/{y}.png'
 //https://wiki.openstreetmap.org/wiki/Tile_servers
-L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
-	maxZoom: 20,
-	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	subdomains: 'abcd',
+	minZoom: 1,
+	maxZoom: 16,
+	ext: 'jpg'
 }).addTo(mymap);
 
 var marker = L.marker([38.63672876590212, -90.24674730564345]).addTo(mymap);
@@ -24,4 +27,3 @@ marker2.bindPopup("<b>Scarlett's Wine Bar</b>.").openPopup();
 marker3.bindPopup("<b>Mi Ranchito</b>.").openPopup();
 marker4.bindPopup("<b>Lorenzo's Trattoria</b>.").openPopup();
 marker4.bindPopup("<b>2Shae Cafe</b>.").openPopup();
-
